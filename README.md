@@ -1,0 +1,2 @@
+# l4d_ReverseBurn_and_ThrowableAnnouncer
+Reverses molotov burn damage
