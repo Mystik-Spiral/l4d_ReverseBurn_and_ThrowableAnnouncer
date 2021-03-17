@@ -4,11 +4,11 @@
 Smart reverse of burn damage from throwables (molotovs) if the victim is burned instantly and continuously.  
 It was created to help mitigate the damage by griefers attempting to kill/incap their teammates by burning them.  
 
-Reverses the following throwable burn types:
+Reverses the following throwable burn types:  
 Molotov.
 
-Announces the following throwable types:
-Molotov, pipe bomb, and bile jar.
+Announces the following throwable types:  
+Molotov, pipe bomb, and bile jar.  
 
 
 Features:  
