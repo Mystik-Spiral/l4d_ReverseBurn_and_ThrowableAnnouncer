@@ -58,6 +58,7 @@
 		"#format"		"{1:s},{2:N}"
 		"en"			"{orange}{1}{lightgreen} You instantly burned {olive}{2}{lightgreen}, damage was reversed."
 		"fr"			"{orange}{1}{lightgreen} Vous avez instantanément brûlé {olive}{2}{lightgreen}, les dégâts ont été inversés."
+		"hu"			"{orange}{1}{lightgreen} Megégetted {olive}{2}{lightgreen}-t, a sebzés visszafordítva."
 	}
 
 	"BurnTeammate"
@@ -65,12 +66,14 @@
 		"#format"		"{1:s},{2:N}"
 		"en"			"{orange}{1}{lightgreen} You instantly burned a teammate, damage was reversed."
 		"fr"			"{orange}{1}{lightgreen} Vous avez instantanément brûlé un coéquipier, les dégâts ont été inversés."
+		"hu"			"{orange}{1}{lightgreen} Megégetted egy csapattársadat, a sebzés visszafordítva."
 	}
 
 	"Announce"
 	{
 		"en"			"{orange}NOTICE:{lightgreen} This server reverses molotov damage!"
 		"fr"			"{orange}AVIS:{lightgreen} Ce serveur sens inverse les dégâts molotov!"
+		"hu"			"{orange}ÉRTESÍTÉS:{lightgreen} Ez a szerver visszafordítja a molotov által okozott sebzést!"
 	}
 
 }
