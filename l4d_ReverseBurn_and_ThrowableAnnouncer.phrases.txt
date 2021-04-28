@@ -72,5 +72,11 @@
 		"en"			"{orange}NOTICE:{lightgreen} This server reverses molotov damage!"
 		"fr"			"{orange}AVIS:{lightgreen} Ce serveur sens inverse les dégâts molotov!"
 	}
+	
+	"ReverseBlast"
+	{
+		"en"			"{lightgreen}Your blast (explosion) damage was reversed."
+		"fr"			"{lightgreen}Vos dégâts de souffle (explosion) ont été inversés."
+	}
 
 }
