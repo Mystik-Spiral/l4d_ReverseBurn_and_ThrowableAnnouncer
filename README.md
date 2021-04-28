@@ -20,6 +20,11 @@ Features:
 	* Before ignition, any players already incapped or with only 1TotalHP do not take any burn damage.  
 - Bots do not take burn damage but do move out of the fire as quickly as possible.  
 - In all other scenarios, burn damage behaves normally.  
+- Option to reverse burn damage if attacker is an admin. [RBaTA_admin, default: 0/false]  
+- Option to reverse blast/explosion damage. [RBaTA_blast, default: 1/true]  
+	* If both RBaEA and RBaTA plugins are loaded, RBaEA takes precedence to avoid both plugins reversing blast/explosion damage.
+- Option to ban attacker (griefer) that disconnects during reverse burn. [RBaTA_banburndisconnect, default: 1/true]  
+- Option to set ban duration in minutes. [RBaTA_banduration, default: 2880 minutes (2 days)]  
 
 Common Scenarios:  
 - Griefer attempts to kill the whole team by burning them.  
