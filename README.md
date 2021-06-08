@@ -16,7 +16,7 @@ Features:
 - Burn damage is reversed only if victim(s) are burned instantly (within 0.75 second of ignition) and continuously (takes burn damage more than once per second).  
 - If player runs into fire more than 0.75 seconds after ignition, burn damage is treated normally.  
 - When burn damage is reversed, during each burn cycle (approximately 6x per second):  
-- Attacker takes 70% damage for each instantly/continuously burned victim  
+  - Attacker takes 70% damage for each instantly/continuously burned victim  
   - Standing burn victims lose 1PermHP which is converted to 2TempHP as incentive to move out of the fire quickly.  
   - Before ignition, any players already incapped or with only 1TotalHP do not take any burn damage.  
 - Bots do not take burn damage but do move out of the fire as quickly as possible.  
