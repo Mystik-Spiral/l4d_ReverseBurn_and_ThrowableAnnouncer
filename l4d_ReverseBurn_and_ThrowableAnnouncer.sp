@@ -1,66 +1,69 @@
 /*
 
-ReverseBurn and ThrowableAnnouncer (l4d_ReverseBurn_and_ThrowableAnnouncer) by Mystik Spiral
-
-Smart reverse of burn damage from throwables (molotovs) if the victim is burned instantly and continuously.
-It was created to help mitigate the damage by griefers attempting to kill/incap their teammates by burning them.
-
-Reverses the following throwable burn types:
-Molotov.
-
-Announces the following throwable types:
-Molotov, pipe bomb, and bile jar.
-
-
-Features:
-
-- Burn damage is reversed only if victim(s) are burned instantly (within 0.75 second of ignition) and continuously (takes burn damage more than once per second).
-- If player runs into fire more than 0.75 seconds after ignition, burn damage is treated normally.
-- When burn damage is reversed, during each burn cycle (approximately 6x per second):
-	* Attacker takes 70% damage for each instantly/continuously burned victim
-	* Standing burn victims lose 1PermHP which is converted to 2TempHP as incentive to move out of the fire quickly.
-	* Before ignition, any players already incapped or with only 1TotalHP do not take any burn damage.
-- Bots do not take burn damage but do move out of the fire as quickly as possible.
-- Griefers cannot kill or incap a victim by burning them (victims still take some damage as stated above).
-- In all other scenarios, burn damage behaves normally.
-- Option to reverse burn/blast damage if attacker is an admin.  [RBaTA_admin, default: 0/false]
-- Option to reverse blast/explosion damage.  [RBaTA_blast, default: 1/true]
-	- If both RBaEA and RBaTA plugins are loaded, RBaEA takes precedence to avoid both plugins reversing blast/explosion damage.
-- Option to ban attacker (griefer) that disconnects during reverse burn. [RBaTA_banburndisconnect, default: 1/true]
-- Option to set ban duration in minutes. [RBaTA_banduration, default: 2880 (2 days)]
-
-
-Common Scenarios:
-
-- Griefer attempts to kill the whole team by burning them.
-Usual end result: Griefer takes 210% damage (70% per victim x 3 victims) plus possible additional self-damage and everyone else takes relatively minor damage.
-
-- Player starts fire (which does not burn anyone within 0.75 seconds) and griefer runs into it.
-Usual end result: Griefer takes normal damage and player that started the fire takes no damage.
-
-
-Suggestion:
-
-To minimize griefer impact, use this plugin along with...
-
-"ReverseBurn and ExplosionAnnouncer" (l4d_ReverseBurn_and_ExplosionAnnouncer)
-...and...
-"Reverse Friendly-Fire" (l4d_reverse_ff)
-
-When these plugins are combined, griefers cannot inflict friendly-fire, and it minimizes damage to victims for throwable (molotov) and explodable (gascans, fireworks, etc.) burn types.
-Although griefers will take significant damage, other players may not notice any difference in game play (other than laughing at stupid griefer fails).
-
-
-Credits:
-
-This plugin began life as "Throwable Announcer" by Marttt.  The original plugin kept track of throwable entities, when they were thrown, and announced who did it. I hooked on to that announcement to track whether that throwable (molotov) instantly burned any other players, and if so, to ensure the attacker took the vast majority of the damage. If no other players are instantly burned, then burn damage is treated normally.
-
-Want to contribute code enhancements?
-Create a pull request using this GitHub repository: https://github.com/Mystik-Spiral/l4d_ReverseBurn_and_ThrowableAnnouncer
-
-Plugin discussion: https://forums.alliedmods.net/showthread.php?t=331166
-
-The phrases file (l4d_ReverseBurn_and_ThrowableAnnouncer.phrases.txt ) is REQUIRED and must be copied to the "addons\sourcemod\translations" directory.
+ReverseBurn and ThrowableAnnouncer (l4d_ReverseBurn_and_ThrowableAnnouncer) by Mystik Spiral  
+  
+Smart reverse of burn damage from throwables (molotovs) if the victim is burned instantly and continuously.  
+It was created to help mitigate the damage by griefers attempting to kill/incap their teammates by burning them.  
+  
+Reverses the following throwable burn types:  
+Molotov.  
+  
+Announces the following throwable types:  
+Molotov, pipe bomb, and bile jar.  
+  
+  
+Features:  
+  
+- Burn damage is reversed only if victim(s) are burned instantly (within 0.75 second of ignition) and continuously (takes burn damage more than once per second).  
+- If player runs into fire more than 0.75 seconds after ignition, burn damage is treated normally.  
+- When burn damage is reversed, during each burn cycle (approximately 6x per second):  
+- Attacker takes 70% damage for each instantly/continuously burned victim  
+  - Standing burn victims lose 1PermHP which is converted to 2TempHP as incentive to move out of the fire quickly.  
+  - Before ignition, any players already incapped or with only 1TotalHP do not take any burn damage.  
+- Bots do not take burn damage but do move out of the fire as quickly as possible.  
+- Griefers cannot kill or incap a victim by burning them (victims still take some damage as stated above).  
+- In all other scenarios, burn damage behaves normally.  
+- Option to reverse burn/blast damage if attacker is an admin.  [RBaTA_admin, default: 0/false]  
+- Option to reverse blast/explosion damage.  [RBaTA_blast, default: 1/true]  
+  - If both RBaEA and RBaTA plugins are loaded, RBaEA takes precedence to avoid both plugins reversing blast/explosion damage.  
+- Option to ban attacker (griefer) that disconnects during reverse burn. [RBaTA_banburndisconnect, default: 1/true]  
+- Option to set ban duration in minutes. [RBaTA_banduration, default: 2880 (2 days)]  
+  
+  
+Common Scenarios:  
+  
+- Griefer attempts to kill the whole team by burning them.  
+Usual end result: Griefer takes 210% damage (70% per victim x 3 victims) plus possible additional self-damage and everyone else takes relatively minor damage.  
+  
+- Player starts fire (which does not burn anyone within 0.75 seconds) and griefer runs into it.  
+Usual end result: Griefer takes normal damage and player that started the fire takes no damage.  
+  
+  
+Suggestion:  
+  
+To minimize griefer impact, use the ReverseBurn and ThrowableAnnouncer plugin along with...  
+  
+ReverseBurn and ExplosionAnnouncer (l4d_ReverseBurn_and_ExplosionAnnouncer)  
+- Smart reverse of burn damage from explodables, like gascans.  
+- Option to reverse blast damage, like propane tanks.  
+  
+Reverse Friendly-Fire (l4d_reverse_ff)  
+- Reverse friendly-fire weapon damage.  Attacker takes damage, victim does not.  
+  
+When these three plugins are combined, griefers will usually get frustrated and leave since they cannot damage anyone other than themselves.  
+Although griefers will take significant damage, other players may not notice any difference in game play (except laughing at stupid griefer fails).  
+  
+  
+Credits:  
+  
+This plugin began life as **[Throwable Announcer](https://forums.alliedmods.net/showthread.php?t=327613)** by Marttt.  The original plugin kept track of throwable entities, when they were thrown, and announced who did it. I hooked on to that announcement to track whether that throwable (molotov) instantly burned any other players, and if so, to ensure the attacker took the vast majority of the damage. If no other players are instantly burned, then burn damage is treated normally.  
+  
+Want to contribute code enhancements?  
+Create a pull request using this GitHub repository: https://github.com/Mystik-Spiral/l4d_ReverseBurn_and_ThrowableAnnouncer  
+  
+Plugin discussion: https://forums.alliedmods.net/showthread.php?t=331166  
+  
+The phrases file (l4d_ReverseBurn_and_ThrowableAnnouncer.phrases.txt ) is REQUIRED and must be copied to the "addons\sourcemod\translations" directory.  
 
 */
 
@@ -70,7 +73,7 @@ The phrases file (l4d_ReverseBurn_and_ThrowableAnnouncer.phrases.txt ) is REQUIR
 #define PLUGIN_NAME                   "[L4D & L4D2] ReverseBurn and ThrowableAnnouncer"
 #define PLUGIN_AUTHOR                 "Mystik Spiral"
 #define PLUGIN_DESCRIPTION            "Reverses damage when victim burned instantly and continuously"
-#define PLUGIN_VERSION                "1.2"
+#define PLUGIN_VERSION                "1.2.1"
 #define PLUGIN_URL                    "https://forums.alliedmods.net/showthread.php?t=331166"
 
 // ====================================================================================================
@@ -156,17 +159,17 @@ static ConVar g_hCvar_Molotov;
 static ConVar g_hCvar_Pipebomb;
 static ConVar g_hCvar_Vomitjar;
 
-static ConVar g_hCvar_PillsDecayRate;		//MS
-static ConVar g_hCvar_BanBurnDisconnect;	//MS
-static ConVar g_hCvar_BanDuration;			//MS
-static ConVar g_hCvar_Admin;				//MS
-static ConVar g_hCvar_Blast;				//MS
+static ConVar g_hCvar_PillsDecayRate;				//MS
+static ConVar g_hCvar_BanBurnDisconnect;			//MS
+static ConVar g_hCvar_BanDuration;					//MS
+static ConVar g_hCvar_Admin;						//MS
+static ConVar g_hCvar_Blast;						//MS
 
 // ====================================================================================================
 // Handles
 // ====================================================================================================
-Handle g_hBeginBurn[MAXPLAYERS + 1];	//MS
-Handle g_hFinishBurn[MAXPLAYERS + 1];	//MS
+Handle g_hBeginBurn[MAXPLAYERS + 1];				//MS
+Handle g_hFinishBurn[MAXPLAYERS + 1];				//MS
 
 // ====================================================================================================
 // bool - Plugin Variables
@@ -181,14 +184,13 @@ static bool   g_bCvar_Molotov;
 static bool   g_bCvar_Pipebomb;
 static bool   g_bCvar_Vomitjar;
 
-static bool g_bFirstBurn[MAXPLAYERS + 1];		//MS
-static bool g_bReverseBurnAtk[MAXPLAYERS + 1];	//MS
-static bool g_bReverseBurnVic[MAXPLAYERS + 1];	//MS
-static bool g_bBothRBPlugins;					//MS
-static bool g_bBurnToggle[MAXPLAYERS + 1];		//MS
-static bool g_bCvar_BanBurnDisconnect;			//MS
-static bool g_bCvar_Admin;						//MS
-static bool g_bCvar_Blast;						//MS
+static bool g_bFirstBurn[MAXPLAYERS + 1];			//MS
+static bool g_bReverseBurnAtk[MAXPLAYERS + 1];		//MS
+static bool g_bReverseBurnVic[MAXPLAYERS + 1];		//MS
+static bool g_bBothRBPlugins;						//MS
+static bool g_bCvar_BanBurnDisconnect;				//MS
+static bool g_bCvar_Admin;							//MS
+static bool g_bCvar_Blast;							//MS
 
 // ====================================================================================================
 // int - Plugin Variables
@@ -196,8 +198,9 @@ static bool g_bCvar_Blast;						//MS
 static int    g_iCvar_Team;
 static int    g_iCvar_DetectionMethod;
 
-static int g_iBurnVictim[MAXPLAYERS + 1];	//MS
-static int g_iCvar_BanDuration;				//MS
+static int g_iBurnToggle[MAXPLAYERS + 1];			//MS
+static int g_iBurnVictim[MAXPLAYERS + 1];			//MS
+static int g_iCvar_BanDuration;						//MS
 
 // ====================================================================================================
 // float - Plugin Variables
@@ -1009,8 +1012,8 @@ public Action OnTakeDamage_Player(int victim, int &attacker, int &inflictor, flo
 				{
 					return Plugin_Handled;
 				}
-				//inflict actual damage to burn victim only once every two calls from OnTakeDamage
-				if (!g_bBurnToggle[victim])
+				//inflict actual damage to burn victim only once every four calls from OnTakeDamage
+				if (g_iBurnToggle[victim] < 1)
 				{
 					//as incentive for standing victims to get out of the fire quickly...
 					//if >1 PermHP remove 1PermHP and add 2TempHP, otherwise if >1 TempHP remove 1TempHP
@@ -1030,11 +1033,15 @@ public Action OnTakeDamage_Player(int victim, int &attacker, int &inflictor, flo
 					{
 						SetClientTempHealth(victim, iVictimTempHealth - 1);
 					}
+					SDKHooks_TakeDamage(victim, inflictor, attacker, 0.0, damagetype, weapon, damageForce, damagePosition);
+					SDKHooks_TakeDamage(attacker, inflictor, attacker, fAttackerDamage, damagetype, weapon, damageForce, damagePosition);
+					g_fLastRevBurnTime[victim] = GetGameTime();
 				}
-				SDKHooks_TakeDamage(victim, inflictor, attacker, 0.0, damagetype, weapon, damageForce, damagePosition);
-				SDKHooks_TakeDamage(attacker, inflictor, attacker, fAttackerDamage, damagetype, weapon, damageForce, damagePosition);
-				g_fLastRevBurnTime[victim] = GetGameTime();
-				g_bBurnToggle[victim] = !g_bBurnToggle[victim];
+				g_iBurnToggle[victim] += 1;
+				if (g_iBurnToggle[victim] > 3)
+				{
+					g_iBurnToggle[victim] = 0;
+				}
 				return Plugin_Handled;
 			}
 			if (IsFakeClient(victim))
