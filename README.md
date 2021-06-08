@@ -45,7 +45,7 @@ This plugin began life as **[Throwable Announcer](https://forums.alliedmods.net/
 Want to contribute code enhancements?  
 Create a pull request using this GitHub repository:  
 https://github.com/Mystik-Spiral/l4d_ReverseBurn_and_ThrowableAnnouncer  
-
+  
 Plugin discussion: https://forums.alliedmods.net/showthread.php?t=331164  
   
-The phrases file (l4d_ReverseBurn_and_ThrowableAnnouncer.phrases.txt) is REQUIRED and must be copied to the "addons\sourcemod\translations" directory.
+The phrases file (l4d_ReverseBurn_and_ThrowableAnnouncer.phrases.txt) is REQUIRED and must be copied to the "addons\sourcemod\translations" directory.  
